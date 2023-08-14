@@ -10,8 +10,8 @@ function App() {
       <HomePage />
       <ReservationForm />
       {/* <HotelList /> */}
-      
-      <button type="submit">Book The Rooms</button>
+      <button type="submit">Cancel</button>
+      <button type="submit">Confirm</button>
     </>
   )
 }
