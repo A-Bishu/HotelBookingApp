@@ -6,13 +6,12 @@ import { HomePage } from './components/HomePage/HomePage';
 
 function App() {
   return (
-    <>
+    <div className="App">
       <HomePage />
       <ReservationForm />
       {/* <HotelList /> */}
-      
-      <button type="submit">Book The Rooms</button>
-    </>
+
+    </div>
   )
 }
 
