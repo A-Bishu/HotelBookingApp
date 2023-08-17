@@ -50,7 +50,7 @@ export function HotelList (){
 
     return (
         <section id="HotelList">
-            {hotelData.map(hotel => <HotelListItem hotelObject={hotel}/>)}
+            {hotelData.map(hotel => <HotelListItem key={hotel.id} hotelObject={hotel}/>)}
         </section>
     )
 }
