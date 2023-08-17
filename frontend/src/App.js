@@ -8,8 +8,9 @@ function App() {
   return (
     <div className="App">
       <HomePage />
-      <ReservationForm />
       <HotelList />
+      {/* Put reservation at the bottom so it displays last KK */}
+      <ReservationForm /> 
     </div>
   )
 }
