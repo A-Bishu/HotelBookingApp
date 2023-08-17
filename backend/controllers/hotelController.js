@@ -1,25 +1,39 @@
-// hotelController.js
-const express = require('express');
+//hotelController.js
+const hotel = require('../models/hotel.model');
 
-const hotelsData = require('../data/hotelsData'); // Import the hotelsData object
+// Get all hotels
 
-// Controller for getting all hotels
-const getAllHotels = (req, res) => {
-    res.send(hotelsData);
+const getAllHotels = async (req, res) => {
+  try {
+    const hotels = await hotel.findAll();
+    res.json(hotels);
+  } catch (err) {
+    console.error('Error fetching data', err);
+    res.status(500).json({ error: 'An error occurred while fetching data' });
+  }
 };
 
-const getHotelById = (req, res) => {
-    const hotelId = parseInt(req.params.id);
-    const hotel = hotelsData.hotels.find((hotel) => hotel.id === hotelId);
+// Get a hotel by ID
 
-    if (!hotel) {
-        return res.status(404).json({ message: 'Hotel not found' });
-      }
-    
-      res.json(hotel);
+const getHotelById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const hotels = await hotel.findByPk(id);
+    if (hotel) {
+      res.json(hotels);
+    } else {
+      res.status(404).json({ message: 'Hotel not found' });
+    }
+  } catch (err) {
+    console.error('Error fetching data', err);
+    res.status(500).json({ error: 'An error occurred while fetching data' });
+  }
 };
+
 
 module.exports = {
   getAllHotels,
   getHotelById,
+ 
 };
+
