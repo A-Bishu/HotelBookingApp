@@ -7,8 +7,6 @@
     "start": "npx nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node scripts/seed.js"
-
-   
   },
   "keywords": [],
   "author": "",
