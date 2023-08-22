@@ -54,7 +54,7 @@ const PopulateTables = async () => {
             const query = `
                 INSERT INTO hotels(name, description, ratings, amenities, location, price_per_night, number_of_rooms)
                 VALUES($1, $2, $3, $4, $5, $6, $7);
-            `;
+            `.trim();
             const values = [
                 hotel.name,
                 hotel.description,
