@@ -7,6 +7,8 @@ const router = express.Router();
 // Define routes
 router.get('/', hotelController.getAllHotels);
 router.get('/:id', hotelController.getHotelById);
+router.put('/:id', hotelController.updateHotel);
+router.delete('/:id', hotelController.deleteHotel);
 
 
 

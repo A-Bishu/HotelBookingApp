@@ -31,9 +31,50 @@ const getHotelById = async (req, res) => {
 };
 
 
+// Update a hotel by ID
+const updateHotel = async (req, res) => {
+  const { id } = req.params;
+  const updatedHotelData = req.body;
+
+  try {
+    const [numRowsUpdated, updatedHotel] = await hotel.update(updatedHotelData, {
+      where: { id }, 
+    });
+
+    if (numRowsUpdated > 0) {
+      res.json(updatedHotel);
+    } else {
+      res.status(404).json({ message: 'Hotel not found' });
+    }
+  } catch (error) {
+    console.error('Error updating hotel:', error);
+    res.status(500).json({ error: 'An error occurred while updating hotel' });
+  }
+};
+
+// Delete a hotel
+const deleteHotel = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const hotelInstance = await hotel.findByPk(id);
+    if (hotelInstance) {
+      await hotelInstance.destroy();
+      res.json({ message: 'Hotel deleted successfully' });
+    } else {
+      res.status(404).json({ message: 'Hotel not found' });
+    }
+  } catch (error) {
+    console.error('Error deleting hotel:', error);
+    res.status(500).json({ error: 'An error occurred while deleting hotel' });
+  }
+};
+
+
 module.exports = {
   getAllHotels,
   getHotelById,
+  updateHotel,
+  deleteHotel,
  
 };
 
