@@ -8,6 +8,7 @@ const router = express.Router();
 router.get('/', hotelController.getAllHotels);
 router.get('/:id', hotelController.getHotelById);
 router.put('/:id', hotelController.updateHotel);
+router.post('/', hotelController.createHotel);
 router.delete('/:id', hotelController.deleteHotel);
 
 

@@ -52,6 +52,28 @@ const updateHotel = async (req, res) => {
   }
 };
 
+// Create a new hotel
+const createHotel = async (req, res) => {
+  const { name, description, ratings, amenities, location, price_per_night, number_of_rooms } = req.body;
+  try {
+
+    const newHotel = await hotel.create({
+      name,
+      description,
+      ratings,
+      amenities,
+      location,
+      price_per_night,
+      number_of_rooms,
+
+    });
+    res.status(201).json(newHotel);
+  } catch (error) {
+    console.error('Error creating hotel:', error);
+    res.status(500).json({ error: 'An error occurred while creating hotel' });
+  }
+};
+
 // Delete a hotel
 const deleteHotel = async (req, res) => {
   const { id } = req.params;
@@ -74,6 +96,7 @@ module.exports = {
   getAllHotels,
   getHotelById,
   updateHotel,
+  createHotel,
   deleteHotel,
  
 };
