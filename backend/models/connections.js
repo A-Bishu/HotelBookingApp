@@ -23,4 +23,3 @@ module.exports = {sequelize, testConnection}
 
 
 
-//This file will act as the connection file to the database.

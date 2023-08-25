@@ -1,18 +1,4 @@
-/*
-import { HotelListItem } from "./HotelListItem";
-
-export function HotelList ({hotels}){
-
-   
-
-    return (
-        <section id="HotelList">
-            {hotels.map(hotel => ( 
-            <HotelListItem key={hotels.id} hotelObject={hotel} />))}
-        </section>
-    )
-}
-*/
+//HotelList.js
 
 import { useState } from "react";
 import { HotelListItem } from "./HotelListItem";
@@ -32,19 +18,28 @@ export function HotelList({ hotels }) {
 
     return (
         <section id="HotelList">
+          <div className="hotel-details-box">
             <div>
-                <label htmlFor="locationFilter">Filter by Location: </label>
-                <select id="locationFilter" value={selectedLocation} onChange={handleLocationChange}>
-                    {locationOptions.map((location, index) => (
-                        <option key={index} value={location}>
-                            {location}
-                        </option>
-                    ))}
-                </select>
+              <label htmlFor="locationFilter">Filter by Location: </label>
+              <select
+                id="locationFilter"
+                value={selectedLocation}
+                onChange={handleLocationChange}
+              >
+                {locationOptions.map((location, index) => (
+                  <option key={index} value={location}>
+                    {location}
+                  </option>
+                ))}
+              </select>
             </div>
-            {filteredHotels.map(hotel => (
-                <HotelListItem key={hotel.id} hotelObject={hotel} />
+          </div>
+          <div className="hotel-items-box">
+            {filteredHotels.map((hotel) => (
+              <HotelListItem key={hotel.id} hotelObject={hotel} />
             ))}
+          </div>
         </section>
-    );
-}
+      );
+      
+    }

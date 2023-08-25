@@ -1,6 +1,6 @@
 // models/Hotel.js
 const { DataTypes } = require('sequelize');
-const {sequelize} = require('./dbConn'); // Assuming you've initialized Sequelize and the database connection
+const {sequelize} = require('./dbConn'); 
 
 const Hotel = sequelize.define('hotel', {
   id: {

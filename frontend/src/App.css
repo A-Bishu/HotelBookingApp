@@ -1,16 +1,88 @@
-* {
-  font-family: Arial, Helvetica, sans-serif;
-  box-sizing: border-box;
-}
-
 body {
   background: white;
   color: black;
   max-width: 400px;
-  padding: 2rem;
   margin: 0 auto;
+  padding: 2rem;
 }
 
-/* .App {
-  text-align: center;
-} */
+.reservation-form {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="date"],
+input[type="number"] {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+
+
+.hotel {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: lightgoldenrodyellow;
+}
+
+.hotel-details {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.reservation-form-container {
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+}
+
+#HotelList {
+  margin-top: 20px;
+}
+
+.hotel-details-box {
+  background-color: lightcyan;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+
+
+

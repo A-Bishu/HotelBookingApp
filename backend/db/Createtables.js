@@ -14,8 +14,9 @@ const Createtables = async () => {
         price_per_night DECIMAL(8, 2),
         number_of_rooms INT
     );
-    
+   
 `);
 }
+
 
 module.exports = Createtables;

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import  HomePage  from './components/HomePage';
 import { HotelList } from './components/HotelList';
 import apiConn from './components/apiConn';
+import './App.css';
 
 
 function App() {
